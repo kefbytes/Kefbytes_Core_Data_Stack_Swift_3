@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		AE325CCF1E9DA5A2000A74A8 /* AddSongVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE325CCE1E9DA5A2000A74A8 /* AddSongVC.swift */; };
+		AE492DE41EA27F4900C3B8C8 /* SaveAnArrayVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE492DE31EA27F4900C3B8C8 /* SaveAnArrayVC.swift */; };
 		AE5FC2ED1E9D972E00D625FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5FC2EC1E9D972E00D625FE /* AppDelegate.swift */; };
 		AE5FC2F21E9D972E00D625FE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE5FC2F01E9D972E00D625FE /* Main.storyboard */; };
 		AE5FC2F41E9D972E00D625FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE5FC2F31E9D972E00D625FE /* Assets.xcassets */; };
@@ -35,6 +36,7 @@
 
 /* Begin PBXFileReference section */
 		AE325CCE1E9DA5A2000A74A8 /* AddSongVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddSongVC.swift; sourceTree = "<group>"; };
+		AE492DE31EA27F4900C3B8C8 /* SaveAnArrayVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveAnArrayVC.swift; sourceTree = "<group>"; };
 		AE5FC2E91E9D972E00D625FE /* Core_Data_With_Swift_3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Core_Data_With_Swift_3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE5FC2EC1E9D972E00D625FE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AE5FC2F11E9D972E00D625FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 				AEC7B9E71E9EF46100323979 /* EmployeeMO+CoreDataProperties.swift */,
 				AE325CCE1E9DA5A2000A74A8 /* AddSongVC.swift */,
 				AE5FC2EC1E9D972E00D625FE /* AppDelegate.swift */,
+				AE492DE31EA27F4900C3B8C8 /* SaveAnArrayVC.swift */,
 				AE5FC31A1E9DA4C900D625FE /* SongTableViewCell.swift */,
 				AE5FC3121E9D9AD400D625FE /* TableUsingFetchedResultsController.swift */,
 				AE5FC3141E9D9B0500D625FE /* ViewUsingNoManagedObjectVC.swift */,
@@ -227,6 +230,7 @@
 			files = (
 				AEC7B9E51E9EF11400323979 /* KefTestModel.xcdatamodeld in Sources */,
 				AE5FC31B1E9DA4C900D625FE /* SongTableViewCell.swift in Sources */,
+				AE492DE41EA27F4900C3B8C8 /* SaveAnArrayVC.swift in Sources */,
 				AEC7B9E21E9EF0DB00323979 /* PersistentStack.swift in Sources */,
 				AE5FC2ED1E9D972E00D625FE /* AppDelegate.swift in Sources */,
 				AE5FC3171E9D9B2000D625FE /* ViewUsingAManagedObjectVC.swift in Sources */,

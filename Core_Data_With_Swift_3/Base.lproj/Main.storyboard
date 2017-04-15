@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Using no ManagedObject-->
+        <!--No MO-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewUsingNoManagedObjectVC" customModule="Core_Data_With_Swift_3" customModuleProvider="target" sceneMemberID="viewController">
@@ -72,7 +72,7 @@
                             <constraint firstItem="lMu-v0-8h9" firstAttribute="top" secondItem="NWX-FK-JcE" secondAttribute="bottom" constant="10" id="zZ8-9q-K3t"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Using no ManagedObject" id="wad-qU-EtJ"/>
+                    <tabBarItem key="tabBarItem" title="No MO" id="wad-qU-EtJ"/>
                     <connections>
                         <outlet property="accountNameTextField" destination="czF-5f-H54" id="JYG-Hs-Kga"/>
                         <outlet property="passwordTextField" destination="NWX-FK-JcE" id="i44-xT-g0w"/>
@@ -83,7 +83,7 @@
             </objects>
             <point key="canvasLocation" x="-930.39999999999998" y="956.67166416791611"/>
         </scene>
-        <!--Using a ManagedObject-->
+        <!--User MO-->
         <scene sceneID="cqr-uQ-BMy">
             <objects>
                 <viewController id="NNU-eF-tvh" customClass="ViewUsingAManagedObjectVC" customModule="Core_Data_With_Swift_3" customModuleProvider="target" sceneMemberID="viewController">
@@ -145,7 +145,7 @@
                             <constraint firstAttribute="leadingMargin" secondItem="lxt-u8-e6G" secondAttribute="leading" id="x8f-dS-no1"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Using a ManagedObject" id="3jp-nd-bhN"/>
+                    <tabBarItem key="tabBarItem" title="User MO" id="3jp-nd-bhN"/>
                     <connections>
                         <outlet property="employeeFirstNameTextField" destination="3xR-BG-C9S" id="6qh-Dr-KB6"/>
                         <outlet property="employeeLastNameTextField" destination="lxt-u8-e6G" id="gtP-fV-TcZ"/>
@@ -314,6 +314,47 @@
             </objects>
             <point key="canvasLocation" x="2877.5999999999999" y="956.67166416791611"/>
         </scene>
+        <!--Array-->
+        <scene sceneID="BaK-Ow-qPJ">
+            <objects>
+                <viewController id="TuA-5y-Wbx" customClass="SaveAnArrayVC" customModule="Core_Data_With_Swift_3" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qfV-6S-fWE"/>
+                        <viewControllerLayoutGuide type="bottom" id="v6H-Xl-XIj"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="LT4-a5-zX3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This view demonstrates saving an array to core data as transformable type" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2s0-jT-k7J">
+                                <rect key="frame" x="16" y="50" width="343" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="twZ-5i-P7x">
+                                <rect key="frame" x="170" y="140" width="34" height="30"/>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="saveAction:" destination="TuA-5y-Wbx" eventType="touchUpInside" id="PvJ-7T-SAm"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="2s0-jT-k7J" firstAttribute="top" secondItem="qfV-6S-fWE" secondAttribute="bottom" constant="30" id="91T-fV-Iqi"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="2s0-jT-k7J" secondAttribute="leading" id="Kvz-cQ-aQ4"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="2s0-jT-k7J" secondAttribute="trailing" id="NIW-KX-0o5"/>
+                            <constraint firstItem="twZ-5i-P7x" firstAttribute="centerX" secondItem="LT4-a5-zX3" secondAttribute="centerX" id="fbV-5F-bMo"/>
+                            <constraint firstItem="twZ-5i-P7x" firstAttribute="top" secondItem="2s0-jT-k7J" secondAttribute="bottom" constant="49" id="guX-by-hGH"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Array" id="sbe-jm-MsR"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rdT-C7-uSJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1197.5999999999999" y="136.28185907046478"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="fNa-3t-Ibx">
             <objects>
@@ -328,17 +369,18 @@
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="Hq7-zJ-CQg"/>
                         <segue destination="NNU-eF-tvh" kind="relationship" relationship="viewControllers" id="b1b-vc-6NF"/>
                         <segue destination="tph-2r-f4l" kind="relationship" relationship="viewControllers" id="WZ6-xP-woa"/>
+                        <segue destination="TuA-5y-Wbx" kind="relationship" relationship="viewControllers" id="qef-VM-0r2"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OQN-be-O3p" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="137.18140929535232"/>
         </scene>
-        <!--Using FecthedResultsController-->
+        <!--FRC-->
         <scene sceneID="NDk-ja-lLn">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tph-2r-f4l" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Using FecthedResultsController" id="Cdi-VQ-WUy"/>
+                    <tabBarItem key="tabBarItem" title="FRC" id="Cdi-VQ-WUy"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="VEK-lN-Plc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
