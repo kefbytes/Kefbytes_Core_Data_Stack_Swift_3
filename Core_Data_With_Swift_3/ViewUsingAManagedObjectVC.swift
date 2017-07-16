@@ -25,14 +25,14 @@ class ViewUsingAManagedObjectVC: UIViewController {
     @IBAction func saveAction(_ sender: Any) {
         print("🤖 employeeTitle = \(employeeTitleTextField.text!), firstName = \(employeeFirstNameTextField.text!), lastName = \(employeeLastNameTextField.text!)")
         
-        let employeeEntityDescription = NSEntityDescription.entity(forEntityName: "Employee", in: persistenceStack.mainMoc)
-        let employee = EmployeeMO(entity: employeeEntityDescription!, insertInto: persistenceStack.mainMoc)
+        let employeeEntityDescription = NSEntityDescription.entity(forEntityName: "Employee", in: persistenceStack.privateMoc)
+        let employee = EmployeeMO(entity: employeeEntityDescription!, insertInto: persistenceStack.privateMoc)
         employee.title = employeeTitleTextField.text
         employee.firstName = employeeFirstNameTextField.text
         employee.lastName = employeeLastNameTextField.text
         
         do {
-            try persistenceStack.mainMoc.save()
+            try persistenceStack.privateMoc.save()
         } catch {
             print("Unable to Save Changes")
             print("\(error), \(error.localizedDescription)")
@@ -57,7 +57,7 @@ class ViewUsingAManagedObjectVC: UIViewController {
         } catch {
             print("Error fetching results")
         }
-        
+                
     }
 
     

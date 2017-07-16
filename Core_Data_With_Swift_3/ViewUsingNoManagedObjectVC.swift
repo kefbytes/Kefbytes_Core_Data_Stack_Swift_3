@@ -25,13 +25,14 @@ class ViewUsingNoManagedObjectVC: UIViewController {
     @IBAction func saveAction(_ sender: Any) {
         print("🤖 accountName = \(accountNameTextField.text!), username = \(usernameTextField.text!), password = \(passwordTextField.text!)")
         
-        let account = Account(context: persistenceStack.mainMoc)
+        
+        let account = Account(context: persistenceStack.privateMoc)
         account.accountName = accountNameTextField.text
         account.username = usernameTextField.text
         account.password = passwordTextField.text
         
         do {
-            try persistenceStack.mainMoc.save()
+            try persistenceStack.privateMoc.save()
         } catch {
             print("Unable to Save Changes")
             print("\(error), \(error.localizedDescription)")
@@ -45,17 +46,19 @@ class ViewUsingNoManagedObjectVC: UIViewController {
     func fetchAccount() {
         
         let accountRequest = NSFetchRequest<Account>(entityName: "Account")
-        do {
-            let items = try persistenceStack.mainMoc.fetch(accountRequest)
-            for account in items {
-                print("🤖 accountName = \(account.accountName!)")
-                print("🤖 username = \(account.username!)")
-                print("🤖 password = \(account.password!)")
-            }
-        } catch let error as NSError {
-            print("Error fetching Item objects: \(error.localizedDescription), \(error.userInfo)")
-        }
-        
-    }
+        persistenceStack.persistentContainer.performBackgroundTask { (context) in
+            do {
+                let items = try context.fetch(accountRequest)
+                for account in items {
+                    print("🤖 accountName = \(account.accountName!)")
+                    print("🤖 username = \(account.username!)")
+                    print("🤖 password = \(account.password!)")
+                }
 
+            } catch let error as NSError {
+                print("Error fetching Item objects: \(error.localizedDescription), \(error.userInfo)")
+            }
+        }
+    }
+    
 }

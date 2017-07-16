@@ -12,7 +12,15 @@ import CoreData
 class PersistenceStack {
     
     static let sharedStack = PersistenceStack()
+
+    lazy var mainMoc: NSManagedObjectContext = {
+        return self.persistentContainer.viewContext
+    }()
     
+    lazy var privateMoc: NSManagedObjectContext = {
+        return self.persistentContainer.newBackgroundContext()
+    }()
+
     lazy var persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "KefTestModel")
         container.loadPersistentStores(completionHandler: { [weak self](storeDescription, error) in
@@ -23,21 +31,9 @@ class PersistenceStack {
         })
         return container
     }()
-    
-    func errorHandler(error: Error) {
-        print("CoreData error \(error), \(error._userInfo)")
-    }
-    
-    lazy var mainMoc: NSManagedObjectContext = {
-        return self.persistentContainer.viewContext
-    }()
-    
-    lazy var privateMoc: NSManagedObjectContext = {
-        return self.persistentContainer.newBackgroundContext()
-    }()
-    
+
     func saveContext () {
-        let context = persistentContainer.viewContext
+        let context = persistentContainer.newBackgroundContext()
         if context.hasChanges {
             do {
                 try context.save()
@@ -46,6 +42,23 @@ class PersistenceStack {
                 fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
             }
         }
+        
+//        persistentContainer.performBackgroundTask({ (context) in
+//            if context.hasChanges {
+//                do {
+//                    try context.save()
+//                } catch {
+//                    let nserror = error as NSError
+//                    fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+//                }
+//            }
+//        })
+
     }
+    
+    func errorHandler(error: Error) {
+        print("CoreData error \(error), \(error._userInfo)")
+    }
+
     
 }

@@ -95,6 +95,7 @@
 		AE5FC2EB1E9D972E00D625FE /* Core_Data_With_Swift_3 */ = {
 			isa = PBXGroup;
 			children = (
+				AEC7B9E11E9EF0DB00323979 /* PersistentStack.swift */,
 				AEC7B9E61E9EF46100323979 /* EmployeeMO+CoreDataClass.swift */,
 				AEC7B9E71E9EF46100323979 /* EmployeeMO+CoreDataProperties.swift */,
 				AE325CCE1E9DA5A2000A74A8 /* AddSongVC.swift */,
@@ -108,7 +109,6 @@
 				AE5FC2F31E9D972E00D625FE /* Assets.xcassets */,
 				AE5FC2F51E9D972E00D625FE /* LaunchScreen.storyboard */,
 				AE5FC2F81E9D972E00D625FE /* Info.plist */,
-				AEC7B9E11E9EF0DB00323979 /* PersistentStack.swift */,
 				AEC7B9E31E9EF11400323979 /* KefTestModel.xcdatamodeld */,
 			);
 			path = Core_Data_With_Swift_3;
